@@ -1,0 +1,38 @@
+//==============================================================================================
+/*! Bottompartウィンドウ
+	@file  010_000_00008.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+
+#define WIN_H 112
+
+WINDOW(010_000_00008) {
+	PATH = TOWNPATH;
+	TEX_ID = DEFAULT_TEXTURE;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_LEFTTOP;
+	POSITION = 0,0;
+	CLOSE_POSITION = 0,0;
+	SIZE = {100},{100};
+};
+
+FRAME(Bottom) {
+	ID = 000_000_000010;
+	TEX_ID = 0,"CHIBG";
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = 0,0;
+	SIZE = {100}, WIN_H;
+	PRIORITY = 2;
+};
+
+BUTTON(Toggle) {
+	ID = 000_000_000020;
+	STYLE = ANCHOR_RIGHTBOTTOM|WIN_CTRL_STYLE_TEXT_BOLD;
+	FONT_KIND = SMALL_FONT;
+	TEX_ID = 0,"MBCT?";
+	CAPTION = 010_020_00040;
+	CAPTION_OFFSET = ,25;
+	SIZE = 96,96;
+	POSITION = -12,-8;
+	PRIORITY = 2;
+};

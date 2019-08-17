@@ -1,0 +1,47 @@
+//==============================================================================================
+/*!タイトル:ログインタイトル
+	@file  001_000_00005.wra
+*/
+//==============================================================================================
+#include "wr.h"
+#include "default_style.h"
+
+#define	MARK_SIZE 640
+#define	TITLE_SIZE 640
+
+WINDOW(001_000_00005) {
+	PATH = TITLEPATH;
+	TEX_ID = 100_000_10000;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_TOP;
+	SIZE = {100},{100};
+};
+
+$id = 001_000_00010;
+$y = -70;
+TEXTURE(TitleMark) {
+	ID = 001_000_00030;
+	STYLE = ANCHOR_CENTER;
+	TEX_ID = 0,"mark";
+	POSITION = 0,78 + $y;
+	COLOR = COLOR32(255,255,255,255);
+	SIZE = MARK_SIZE,MARK_SIZE * 335/512;
+	PRIORITY = 0;
+};
+TEXTURE(Title) {
+	ID = 001_000_00010;
+	STYLE = ANCHOR_CENTER;
+	TEX_ID = 0,"title";
+	POSITION = 0,$y;
+	COLOR = COLOR32(255,255,255,255);
+	SIZE = TITLE_SIZE,TITLE_SIZE * 69/512;
+	PRIORITY = 1;
+};
+TEXTURE(TitleFlush) {
+	ID = 001_000_00020;
+	STYLE = ANCHOR_CENTER;
+	TEX_ID = 0,"titl2";
+	POSITION = 0,$y;
+	COLOR = COLOR32(255,255,255,255);
+	SIZE = TITLE_SIZE,TITLE_SIZE * 69/512;
+	PRIORITY = 2;
+};

@@ -1,0 +1,49 @@
+//==============================================================================================
+/*!
+	@file  251_000_10000.wra
+	@brief	数値入力パッド
+*/
+//==============================================================================================
+#include "wr.h"
+#include "default_style.h"
+#include "number_pad.h"
+
+#define	WIN_W	500
+#define WIN_H	520
+
+WINDOW(250_000_00020) {
+	PATH = SYSTEM_WINDOW_PATH;
+	STYLE = WINDOW_STYLE_POPUP|WINDOW_STYLE_ANCHOR_CENTER|WINDOW_STYLE_NOTITLEBAR;
+	TEX_ID1 = "FRMW";
+	COLOR1 = COLOR32(220,220,220,255);
+	POSITION = 0,0;
+	PRIORITY = 1;
+	SIZE = WIN_W,WIN_H;
+	CLOSE_SCALE = 80,80,0,0;
+};
+
+TEXT(Title) {
+	ID = 000_000_00100;
+	STYLE = BASE_TOP;
+	POSITION = WIN_W/2,8;
+	CAPTION = 010_050_00080;
+	DEF_TEXT_TITLE;
+};
+
+FRAME(Input) {
+	ID = 000_100_00010;
+	CAPTION_COLOR = COLOR32(50,50,50,255);
+	SIZE = WIN_W - 20*2,70;
+	POSITION = 20,60;
+	DEF_FRAME_LIGHT;
+};
+TEXT(Value) {
+	ID = 000_100_00020;
+	STYLE = BASE_RIGHTTOP;
+	POSITION=WIN_W - 50,75;
+	CAPTION = 000_000_00010;
+	DEF_TEXT_MESSAGE_LARGE;
+};
+
+NumberPad(000_000_00001,20,160,44*3);
+

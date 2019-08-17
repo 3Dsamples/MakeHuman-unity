@@ -1,0 +1,4 @@
+FORMAT = PNG;
+PART("HOME") {
+	DITHER = ON;
+};

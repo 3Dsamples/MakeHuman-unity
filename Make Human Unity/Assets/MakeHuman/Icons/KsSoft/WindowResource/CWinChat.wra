@@ -1,0 +1,87 @@
+//==============================================================================================
+/*! チャットウィンドウ
+	@file  010_000_00015.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+
+#define WIN_H 80+64
+#define OFFSET_Y -112
+
+WINDOW(010_000_00015) {
+	PATH = CHATPATH;
+	TEX_ID = DEFAULT_TEXTURE;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_LEFTBOTTOM|WINDOW_STYLE_TOP|WINDOW_STYLE_NOECLIPSE;
+	POSITION = 0,0;
+	PRIORITY = 1;
+	CLOSE_POSITION = 0,0;
+	SIZE = {100},WIN_H;
+};
+
+BUTTON(Resize) {
+	ID = 000_000_00010;
+	TEX_ID = "CHSZ?";
+	STYLE = ANCHOR_RIGHTTOP|WIN_CTRL_STYLE_DRAG;
+	POSITION = 0,64+OFFSET_Y;
+	SIZE = 72,48;
+	PRIORITY = 1;
+};
+// Chat
+FRAME(Chat) {
+	ID = 000_000_00020;
+	TEX_ID = 0,"CHTBG";
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = 0,OFFSET_Y;
+	SIZE = {100}, 80;
+};
+LOG(Chat) {
+	ID = 000_000_00030;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = 0,OFFSET_Y;
+	SIZE = {100}, 80-2;
+	CONTENTS_SIZE = {100}, 80-2;
+	CONTENTS = {
+		ICON(Chat) {
+			ID = 000_001_00000;
+			TEX_ID0 = 100_100_00000,"CHTIB";
+			TEX_ID1 = 100_100_00000;
+			TEX_ID2 = 100_100_00000,"CHTIF";
+			SIZE = 64, 64;
+			TEXTURE_SIZE1 = 54,54;
+			TEXTURE_OFFSET1 = 5,3;
+			COLOR1 = COLOR32(255,255,255,255);
+			POSITION = 16,16;
+		};
+		FRAME(Balloon) {
+			ID = 000_001_00010;
+			TEX_ID = 0, "CHTFL";
+			POSITION = 80, 36;
+			SIZE = 480;
+		};
+		LOGTEXT(Chat) {
+			ID = 000_001_00100;
+			POSITION = 105, 44;
+			DEF_TEXT_CHAT;
+			CAPTION = 000_000_00010;
+			CONTENTS_SIZE = 460;
+			LINE_SPACE = 2;
+			SIZE = 460,55;
+		};
+		TEXT(Name) {
+			ID = 000_001_00110;
+			POSITION = 120,14;
+			DEF_TEXT_CHAT_NAME;
+			CAPTION = NOWLOADING;
+		};
+	}
+	COLOR = COLOR32(0,0,0,255);
+	LINE_SPACE = 10;
+	GROUP = SCROLLBAR(Chat);
+};
+SCROLLBAR(Chat) {
+	ID = 000_001_00001;
+	STYLE = ANCHOR_RIGHTTOP;
+	DEF_SCROLLBAR;
+	POSITION = -16,5;
+	SIZE = 0,-10;
+};

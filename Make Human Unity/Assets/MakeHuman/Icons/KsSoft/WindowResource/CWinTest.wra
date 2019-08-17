@@ -1,0 +1,250 @@
+//==============================================================================================
+/*! CWinTest
+	@file  255_000_00000
+*/
+//==============================================================================================
+WINDOW(255_000_00000) {
+	PATH = "Assets/KsSoft/Scripts/Test/";
+	POSITION = 0,0;
+	CLOSE_POSITION = 400,0;
+	STYLE = NOTITLEBAR;
+	SIZE = {100},{100};
+	TEX_ID = 100_000_00001;
+};
+$x = 0;
+$y = 4;
+TEXT(Test) {
+	STYLE = ANCHOR_TOP|DRAG|HIT;
+	POSITION = $x,$y;
+	CONTENTS_SIZE = 512;
+	CAPTION = "abcdefghijklmnopqrstuvwxyz";
+};
+$y += 32;
+RICHTEXT(Test) {
+	STYLE = ANCHOR_TOP;
+	POSITION = $x,$y;
+	CONTENTS_SIZE = 512;
+	CAPTION = "abcdefghijkl\c[3]mnopqrstuvw\nxyz";
+};
+$y += 32;
+LOG(Test) {
+	STYLE = ANCHOR_TOP;
+	POSITION = $x,$y;
+	SIZE = 512,64;
+	LINE_SPACE = 4;
+	CONTENTS = {
+		LOGTEXT(Test) {
+			STYLE = HIT;
+			CONTENTS_SIZE = 400;
+			CAPTION = "logtext";
+		};
+	};
+};
+$y += 80;
+TEXTBOX(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x - 200,$y;
+	SIZE = 300,110;
+	EDIT = 255,16;
+	TEX_ID = "EDBT0";
+	CAPTION = "This control is textbox.\nYou can not edit it.";
+	CAPTION_COLOR = 0,0,0,1;
+};
+
+EDITBOX(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x + 200,$y;
+	SIZE = 300,110;
+	EDIT = 255,16;
+	TEX_ID = "EDBT0";
+	CAPTION = "This control is editbox\nYou can edit it.";
+	CAPTION_COLOR = 0,0,0,1;
+	COLOR1 = 0,0,0,1;
+};
+$y += 120;
+BUTTON(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x - 150,$y;
+	SIZE = 160;
+	CAPTION = "Button\n Test";
+};
+
+CHECKBOX(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x + 150,$y;
+	SIZE = 160;
+	CAPTION = "Checkbox";
+};
+
+$y += 72;
+
+RADIO(A) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x - 200,$y;
+	SIZE = 160;
+	CAPTION = "Radio A";
+	GROUP = RADIO(B),RADIO(C);
+	CONTENTS = {
+		TEXTURE(RadioA) {
+			STYLE = ANCHOR_TOP|DRAG|HIT;
+			POSITION = $x - 80,$y + 80;
+			TEX_ID = "CRYS";
+			SIZE = 64,64;
+			COLOR = 2,1,1,1;
+		};
+	};
+};
+
+RADIO(B) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x,$y;
+	SIZE = 160;
+	CAPTION = "Radio B";
+	GROUP = RADIO(A),RADIO(C);
+	CONTENTS = {
+		TEXTURE(RadioB) {
+			STYLE = ANCHOR_TOP|DRAG|HIT;
+			POSITION = $x,$y + 80;
+			TEX_ID = "CRYS";
+			SIZE = 64,64;
+			COLOR = 1,2,1,1;
+		};
+	};
+};
+
+RADIO(C) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x + 200,$y;
+	SIZE = 160;
+	CAPTION = "Radio C";
+	GROUP = RADIO(A),RADIO(B);
+	CONTENTS = {
+		TEXTURE(RadioC) {
+			STYLE = ANCHOR_TOP|DRAG|HIT;
+			POSITION = $x + 80,$y + 80;
+			TEX_ID = "CRYS";
+			SIZE = 64,64;
+			COLOR = 1,1,2,1;
+		};
+	};
+};
+
+
+$y += 150;
+LINE(Test) {
+	STYLE = ANCHOR_TOP|DRAG|HIT;
+	POSITION = $x,$y;
+	POSITION2 = $x + 200,$y;
+	TEX_ID = "TXFD0";
+	SIZE = 0,24;
+};
+$y += 40;
+RENDER(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x - 200,$y;
+	SIZE = 128,80;
+	CONTENTS_SIZE = 128,128;
+	COLOR1 = 0.3,0.0,0.0,0.5;
+	TEX_ID = 255_000_00010;
+};
+ICON(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x,$y;
+};
+RECASTICON(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x + 120,$y;
+};
+RENDERICON(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x + 250,$y;
+	SIZE = 80,80;
+	CONTENTS_SIZE = 256,256;
+	TEX_ID = 255_000_00000;
+	COLOR1 = 0.3,0.3,0,0.5;
+};
+$y += 110;
+METER(Test) {
+	STYLE = ANCHOR_TOP|DRAG|HIT;
+	POSITION = $x - 200 ,$y;
+	SIZE = 256;
+};
+CONTAINER(Test) {
+	STYLE = ANCHOR_TOP;
+	POSITION = $x + 200 ,$y;
+	SIZE = 300,200;
+	CONTENTS_SIZE = 512,512;
+	CONTENTS = {
+		TEXTURE(A) {
+			TEX_ID = "TQML1";
+		};
+		TEXTURE(B) {
+			STYLE = BASE_RIGHTTOP|HIT|DRAG;
+			POSITION = 512;
+			TEX_ID = "TQML1";
+		};
+		TEXTURE(C) {
+			STYLE = BASE_LEFTBOTTOM;
+			POSITION = 0,512;
+			TEX_ID = "TQML1";
+		};
+		TEXTURE(D) {
+			STYLE = BASE_RIGHTBOTTOM;
+			POSITION = 512,512;
+			TEX_ID = "TQML1";
+		};
+	};
+};
+
+$y += 64;
+LISTBOX(Test) {
+	STYLE = ANCHOR_TOP;
+	POSITION = $x - 250 ,$y;
+	SIZE = 200,80;
+	LINE_SPACE = 4;
+	CONTENTS_SIZE = 200,40;
+	CONTENTS = {
+		BUTTON(Listbox) {
+			SIZE = 200,40;
+			CAPTION = "Listbox!!";
+		};
+	};
+	GROUP = SCROLLBAR(Test);
+};
+SCROLLBAR(Test) {
+	POSITION = 0,0;
+};
+LISTBOXEX(Test) {
+	STYLE = ANCHOR_TOP;
+	POSITION = $x - 50,$y;
+	SIZE = 200,80;
+	LINE_SPACE = 4;
+	CONTENTS_SIZE = 200,40;
+	CONTENTS = {
+		BUTTON(ListboxEx) {
+			SIZE = 200,40;
+			CAPTION = "Listbox EX!!";
+		};
+	};
+};
+
+$y += 100;
+FRAME(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x - 300,$y;
+	TEX_ID = "FRMB";
+	SIZE = 80,80;
+};
+LABEL(Test) {
+	STYLE = ANCHOR_TOP|DRAG|HIT;
+	POSITION = $x - 210,$y;
+	TEX_ID = "TXFD0";
+	CAPTION = "Label";
+	SIZE = 80;
+};
+BAR(Test) {
+	STYLE = ANCHOR_TOP|DRAG;
+	POSITION = $x - 60,$y;
+	CAPTION = "Bar";
+	SIZE = 200;
+};

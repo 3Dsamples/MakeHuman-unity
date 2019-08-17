@@ -1,0 +1,328 @@
+PART("BTNQ0") {
+	DIVIDE3H = 42,42;
+};
+PART("BTNQ1") {
+	DIVIDE3H = 42,42;
+};
+PART("PRTY0") {
+	DITHER = ON;
+};
+PART("PRTY1") {
+	DITHER = ON;
+};
+// タブバー
+PART("MBHM0") {
+	DITHER = ON;
+};
+PART("MBHM1") {
+	DITHER = ON;
+};
+PART("MBQT0") {
+	DITHER = ON;
+};
+PART("MBQT1") {
+	DITHER = ON;
+};
+PART("MBIT0") {
+	DITHER = ON;
+};
+PART("MBIT1") {
+	DITHER = ON;
+};
+PART("MBGC0") {
+	DITHER = ON;
+};
+PART("MBGC1") {
+	DITHER = ON;
+};
+PART("MBSP0") {
+	DITHER = ON;
+};
+PART("MBSP1") {
+	DITHER = ON;
+};
+// タイトルバー
+PART("TTBAR") {
+	DITHER = ON;
+};
+// 通知
+PART("BGIN0") {
+	DITHER = ON;	
+};
+PART("BGIN1") {
+	DITHER = ON;	
+};
+//チャットボタン
+PART("BTNC0")	{	//旧CLx0
+	DIVIDE3H = 11,11;
+};
+PART("BTNC1")	{	//旧CLx1
+	DIVIDE3H = 17,17;
+};
+//チャットチェックボックス
+PART("TXFI0")	{	//旧CRx0
+	DIVIDE3H = 12,12;
+};
+PART("TXFI1")	{	//旧CRx1
+	DIVIDE3H = 18,18;
+};
+// クエスト用ボタン
+PART("BTNR0") {	//旧RBxx
+	DIVIDE3H = 20,55;
+};
+PART("BTNR1") {	//旧RBxx
+	DIVIDE3H = 20,55;
+};
+// タブボタン
+PART("BTNT0") {
+	DIVIDE3H = 24,24;
+	DITHER = ON;
+};
+PART("BTNT1") {
+	DIVIDE3H = 24,24;
+	DITHER = ON;
+};
+
+PART("BAR") {
+	DIVIDE3H = 13,13;
+};
+PART("FRMA") {	//旧CAxx("通知")
+	DIVIDE9 = 32,22,32,22;
+};
+PART("FRMF") {
+	DIVIDE9 = 38,22,38,22;
+};
+PART("FRMB") {	//旧CBxx("メール,掲示板")
+	DIVIDE9 = 10,10,10,10;
+};
+PART("FRMC") {	//旧CCxx
+	DIVIDE9 = 5,5,5,5;
+};
+PART("CHEK0") {
+	DIVIDE3H = 40,10;
+	DITHER = ON;
+};
+PART("CHEK1") {
+	DIVIDE3H = 40,10;
+	DITHER = ON;
+};
+PART("DILG0") {	//旧DIx0
+	DIVIDE3 = 36,14;
+};
+PART("DILG1","DILG0") {	//旧DIx0
+	DIVIDE3 = 36,14;
+};
+PART("FRML") {	//旧FLxx
+	DIVIDE9 = 10,10,10,10;
+	DITHER = OFF;
+};
+PART("FRME") {
+	DIVIDE9 = 16,16,16,16;
+};
+PART("FRMP") {	//旧FPxx
+	DIVIDE9 = 5,5,5,5;
+};
+PART("FRAME") {	//旧FRxx
+	DIVIDE9 = 40,40,40,40;
+	DITHER = OFF;
+};
+PART("FRMS") {	//旧FTx
+	DIVIDE9 = 5,5,5,5;
+};
+PART("BTNI0") {	//旧I1x0
+	DIVIDE3H = 44,44;
+};
+PART("BTNI1") {	//旧I1x1
+	DIVIDE3H = 44,44;
+};
+PART("LABEL") {		//旧LBLx
+	DIVIDE3H = 10,10;
+};
+PART("MTRB") {	//旧MTBx
+	DIVIDE3H = 12,12;
+};
+PART("MTR") {	//旧MTRx
+	DIVIDE3H = 12,12;
+};
+PART("FRMW") {	//旧PWxx
+	DIVIDE9 = 42,42,42,42;
+};
+PART("EDBS0") {	//旧S1xx
+	DIVIDE3H = 37,37;
+};
+PART("EDBS1") {	//旧S1xx
+	DIVIDE3H = 37,37;
+};
+// スクロールバー
+PART("SCBBV") {
+	DIVIDE3H = 8,8;
+};
+PART("SCBBH") {
+	DIVIDE3V = 8,8;
+};
+PART("SCBRV") {
+	DIVIDE3H = 8,8;
+};
+PART("SCBRH") {
+	DIVIDE3V = 8,8;
+};
+
+PART("TXFD0")	{	//旧TFx0
+	DIVIDE3H = 12,12;
+};
+PART("TXFD1")	{	//旧TFx0
+	DIVIDE3H = 12,12;
+};
+PART("EDBT0")	{	//旧Txx0
+	DIVIDE9 = 16,16,16,16;
+};
+PART("EDBT1")	{	//旧Txx1
+	DIVIDE9 = 16,16,16,16;
+};
+PART("BARVG")	{
+	DIVIDE3H	= 8,8;
+	DITHER = ON;
+};
+// 左上ステータス
+PART("TPRM")	{
+	DITHER = ON;
+};
+// チャットリサイズ
+PART("CHSD0") {
+	DITHER = ON;
+};
+PART("CHSD1") {
+	DITHER = ON;
+};
+PART("CHSZ0") {
+	DITHER = ON;
+};
+PART("CHSZ1") {
+	DITHER = ON;
+};
+// チャット背景
+PART("CHTBG") {
+	DIVIDE9 = 2,2,2,2;
+};
+PART("CHIBG") {
+	DITHER = ON;
+	DIVIDE3H = 4,4;	
+};
+// チャット吹き出し
+PART("CHTFL") {
+	DIVIDE3H = 32,16;	
+};
+PART("CHTFR") {
+	DIVIDE3H = 16,32;
+};
+// メーター
+PART("HPBK") {
+	DIVIDE3H = 12,12;
+	DITHER = ON;
+};
+PART("GAGE0") {
+	DIVIDE3H = 4,4;
+	DITHER = ON;
+};
+PART("GAGE1") {
+	DIVIDE3H = 4,4;
+	DITHER = ON;
+};
+PART("GAGE2") {
+	DIVIDE3H = 4,4;
+	DITHER = ON;
+};
+// クエストタブボタン
+PART("TQEV0") {
+	DITHER = ON;
+};
+PART("TQEV1") {
+	DITHER = ON;
+};
+PART("TQSL0") {
+	DITHER = ON;
+};
+PART("TQSL1") {
+	DITHER = ON;
+};
+PART("TQML0") {
+	DITHER = ON;
+};
+PART("TQML1") {
+	DITHER = ON;
+};
+// クエストバーボタン
+PART("BQSL0") {
+	DIVIDE3H = 112,48;
+	DITHER = ON;
+};
+PART("BQSL1") {
+	DIVIDE3H = 112,48;
+	DITHER = ON;
+};
+PART("BQML0") {
+	DIVIDE3H = 112,48;
+	DITHER = ON;
+};
+PART("BQML1") {
+	DIVIDE3H = 112,48;
+	DITHER = ON;
+};
+// バーボタン
+PART("BTNL0") {
+	DIVIDE3H = 112,48;
+	DITHER = ON;
+};
+PART("BTNL1") {
+	DIVIDE3H = 112,48;
+	DITHER = ON;
+};
+// ページ背景
+PART("PAGEB") {
+	DIVIDE3H = 24,24;
+};
+// ページアロウボタン
+PART("ARWL0") {
+	DITHER = ON;
+};
+PART("ARWL1") {
+	DITHER = ON;
+};
+PART("ARWR0") {
+	DITHER = ON;
+};
+PART("ARWR1") {
+	DITHER = ON;
+};
+// システムウィンドウ
+PART("SYSFR") {
+	DIVIDE9 = 36,36,36,36;
+	DITHER = OFF;
+};
+PART("SYSTL") {
+	DIVIDE3H = 64,64;
+	DITHER = OFF;
+};
+// ボタン
+PART("BTN00") {
+	DIVIDE3H = 24,24;
+	DITHER = ON;
+};
+PART("BTN01") {
+	DIVIDE3H = 24,24;
+	DITHER = ON;
+};
+PART("BTN10") {
+	DIVIDE3H = 24,24;
+	DITHER = ON;
+};
+PART("BTN11") {
+	DIVIDE3H = 24,24;
+	DITHER = ON;
+};
+PART("STRY0","STRYB") {	//旧RBxx
+	NODIVIDE;
+};
+PART("STRY1","STRYB") {	//旧RBxx
+	NODIVIDE;
+};

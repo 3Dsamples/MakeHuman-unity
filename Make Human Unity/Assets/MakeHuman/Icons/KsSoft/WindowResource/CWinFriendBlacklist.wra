@@ -1,0 +1,120 @@
+//==============================================================================================
+/*!タイトル:迷惑リスト
+	@file  010_020_00004.wra
+
+	@author sein
+*/
+//==============================================================================================
+#include "profile.h"
+#include "default_style.h"
+
+WINDOW(010_020_00004) {
+	PATH = FRIENDPATH;
+	TEX_ID = 100_000_00001;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_CENTER;
+	POSITION = 0,5;
+	SCREEN = 0,BASEY,{100},{100} -BOTTOMY- 210;
+	SIZE = 570,{100};
+	CLOSE_POSITION = 320,5;
+};
+
+$W = 170;
+$x = 0; $y = 130;
+$w = 570; $h = 90;
+FRAME(BlacklistSearchBackgroundFrame) {
+	ID = 001_020_00400;
+	STYLE = ANCHOR_LEFTTOP;
+	DEF_FRAME_LIGHT;
+	POSITION = $x,$y;
+	SIZE = $w, $h;
+};
+$x += 32; $y += 32;
+$w = 88;
+TEXT(BlacklistSearchLabel) {
+	ID = 001_020_00410;
+	STYLE = ANCHOR_LEFTTOP;
+	DEF_BUTTON_NORMAL;
+	POSITION = $x,$y + 5;
+	CAPTION = 010_010_00110;
+};
+$x += $w + 88; $y -= 16;
+$w = 44*8;
+EDITBOX(BlacklistSearchBox) {
+	ID = 001_020_00420;
+	STYLE = ANCHOR_LEFTTOP;
+	DEF_INPUTBOX_SEARCH;
+	POSITION = $x,$y;
+	SIZE = $w;
+};
+//
+$x = $W; $y = -220;
+TEXT(BlacklistLabel) {
+	ID = 001_020_00510;
+	STYLE = ANCHOR_LEFTTOP;
+	WHITE_CAPTION_COLOR;
+	POSITION = $x,$y;
+	CAPTION = 010_010_00400;
+};
+
+// Sort
+$x = -16; $y = 24;
+$w = 44*3;
+BUTTON(Sort) {
+	ID = 010_020_00010;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	CAPTION = 000_000_00100;
+	DEF_BUTTON_SORT;
+	POSITION = $x,0;
+	SIZE = $w, 54;
+};
+TEXT(Sort) {
+	ID = 010_020_00011;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	WHITE_CAPTION_COLOR;
+	POSITION = $x - 24,-24;
+	CAPTION = 010_030_00060;
+	FONT_KIND = SMALL_FONT;
+};
+
+$lx = 35; $ly = 255;
+$w = 510; $h = 100;
+LISTBOX(Blacklist) {
+	ID = 001_020_00520;
+	POSITION = $lx,$ly;
+	STYLE = ANCHOR_LEFTTOP;
+	SIZE = $w + 158,{100} - $ly - 60;
+	CONTENTS_SIZE = $w + 158,$h+4;
+	CONTENTS = {
+		$x = 0; $y = 0;
+		$h = 100;
+		FRAME(BlacklistFrame) {
+			ID = 001_020_00530;
+			STYLE = ANCHOR_LEFTTOP;
+			DEF_FRAME_LIGHT;
+			POSITION = $x,$y + 5;
+			SIZE = $w, $h;
+		};
+		$x = 0; $y = 4;
+		Profile(Blacklist,001_020_00540,$x,$y);
+
+		$x += 160 + 110 + 20; $y = 22;
+		$w = 44*4+32; $h = 64;
+		BUTTON(BlacklistCancel) {
+			ID = 001_020_00550;
+			CAPTION = 010_010_00420;
+			FONT_KIND = SMALL_FONT;
+			TEX_ID = 0,"BTN1?";
+			STYLE = ANCHOR_LEFTTOP;
+			POSITION = $x,$y;
+			SIZE = $w, $h;
+		};
+	}
+	GROUP = SCROLLBAR(Blacklist);
+};
+SCROLLBAR(Blacklist) {
+	ID = 001_020_00525;
+	STYLE = ANCHOR_RIGHTTOP;
+	DEF_SCROLLBAR;
+	POSITION = -150,16;
+	SIZE = 0,-16 * 2;
+};

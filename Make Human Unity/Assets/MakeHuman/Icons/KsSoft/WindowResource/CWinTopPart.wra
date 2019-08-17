@@ -1,0 +1,105 @@
+//==============================================================================================
+/*! Toppartウィンドウ
+	@file  010_000_00005.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+#include "profile.h"
+
+WINDOW(010_000_00005) {
+	PATH = TOWNPATH;
+	//TEX_ID = DEFAULT_TEXTURE;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_LEFTTOP;
+	POSITION = 0,0;
+	TEXTURE_ZOFFSET = 255_000_00010,1;
+	CLOSE_POSITION = 400,0;
+	SIZE = {100},{100};
+};
+
+// Background
+TEXTURE(BG) {
+	ID = 000_000_00010;
+	POSITION = 0,0;
+	TEX_ID = 0,"TPRM";
+};
+
+//------------------------------------------
+// Icon
+ICON(Icon) {
+	ID = 000_000_00020;
+	TEX_ID0 = 100_100_00000,"ICNBG";
+	TEX_ID1 = 100_100_00000;
+	TEX_ID3 = 100_100_00000,"ICN1";
+	SIZE = 76,76;
+	TEXTURE_SIZE1 = 76,76;
+	TEXTURE_OFFSET3 = 2,0;
+	POSITION = 10,0;
+};
+TEXTURE(Icon) {
+	ID = 000_000_00030;
+	TEX_ID = 100_100_00000,"STCHF";
+	POSITION = 9,0;
+	PRIORITY = 1;
+};
+
+// Connect
+TEXTURE(Connect) {
+	ID = 000_000_00100;
+	POSITION = 96,8;
+	DEF_ICON_CONNECT;
+	PRIORITY = 1;
+};
+// Name
+TEXT(Name) {
+	ID = 000_000_00110;
+	CAPTION = 000_000_00002;
+	DEF_TEXT_ACCOUNT_NAME;
+	POSITION = 116,8;
+};
+// Etc
+METER(Etc) {
+	ID = 000_000_00140;
+	SIZE = 162,10;
+	POSITION = 94,29;
+	TEX_ID = 0,"HPBR";
+	TEX_ID1 = 0,"GAGE1";
+	TEX_ID2 = 0,"HPBK";
+	TEXTURE_SIZE1 = 162,10;
+	TEXTURE_SIZE2 = 170,18;
+	TEXTURE_OFFSET0 = 7,4;
+	TEXTURE_OFFSET1 = 7,4;
+};
+// Level
+TEXT(Level) {
+	ID = 000_000_00150;
+	CAPTION = 000_000_00009;
+	DEF_TEXT_LEVEL;
+	POSITION = 94,47;
+};
+METER(Exp) {
+	ID = 000_000_00170;
+	SIZE = 106,10;
+	POSITION = 150,47;
+	TEX_ID = 0,"HPBR";
+	TEX_ID1 = 0,"GAGE0";
+	TEX_ID2 = 0,"HPBK";
+	TEXTURE_SIZE1 = 106,10;
+	TEXTURE_SIZE2 = 114,18;
+	TEXTURE_OFFSET0 = 7,4;
+	TEXTURE_OFFSET1 = 7,4;
+};
+
+#define	PartyMember(_name,_id,_x,_y)	\
+	RENDERICON(_name) {	\
+		ID = _id;	\
+		STYLE = DRAG;	\
+		TEX_ID  = 255_000_00010;	\
+		SIZE = 80, 80;	\
+		CONTENTS_SIZE = 256,256;	\
+		POSITION = _x,_y;	\
+	}
+		
+$x = 280;
+PartyMember(Party0,010_000_00210,$x    ,0);
+PartyMember(Party1,010_000_00220,$x+90,0);
+PartyMember(Party2,010_000_00230,$x+180,0);

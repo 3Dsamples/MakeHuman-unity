@@ -1,0 +1,58 @@
+//==============================================================================================
+/*!タイトル:ログイン画面(開発用)
+	@file  001_000_00002.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+
+WINDOW(001_000_00002) {
+	PATH = TITLEPATH;
+	TEX_ID = 100_000_00001;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_LEFTTOP;
+	SIZE = {100},{100};
+};
+$y -= 90;
+EDITBOX(LoginID) {
+	ID = 001_000_00010;
+	STYLE = ANCHOR_BOTTOM;
+	SIZE = 300;
+	EDIT = 255,0;
+	POSITION = 0,$y;
+	DEF_INPUTBOX;
+};
+$y += 80;
+BUTTON(Login) {
+	ID = 001_000_00040;
+	CAPTION = 001_000_00030;
+	STYLE = ANCHOR_BOTTOM;
+	POSITION = 0,$y;
+	SIZE = 48 * 4;
+	DEF_BUTTON_LARGE;
+	SE_ID = SE_DECIDE;
+};
+$w = 300;
+LISTBOX(List) {
+	ID = 001_100_00000;
+	POSITION = 0,160;
+	STYLE = ANCHOR_BOTTOM;
+	SIZE = $w,160 - 16;
+	CONTENTS_SIZE = $w,48;
+	CONTENTS = {
+		CHECKBOX(IP) {
+			ID = 001_000_00020;
+			CAPTION = 001_000_00030;
+			STYLE = ANCHOR_LEFTTOP;
+			POSITION = 0,0;
+			SIZE = $w,48;
+			DEF_BUTTON_TINY;
+		};
+	}
+	GROUP = SCROLLBAR(List);
+};
+SCROLLBAR(List) {
+	ID = 001_100_00010;
+	DEF_SCROLLBAR;
+	STYLE = ANCHOR_RIGHTTOP;
+	POSITION = 4,16;
+	SIZE = 0,-16 * 2;
+};

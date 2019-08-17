@@ -1,0 +1,241 @@
+//==============================================================================================
+/*! Chat個人選択ウィンドウ
+	@file  010_000_00040.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+#include "profile.h"
+
+#define	WIN_W	520
+#define WIN_H	640
+WINDOW(010_000_00040) {
+	PATH = CHATPATH;
+	TEX_ID = DEFAULT_TEXTURE;
+	STYLE = WINDOW_STYLE_POPUP|WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_CENTER;
+	POSITION = 0,0;
+	PRIORITY = 1;
+	SCREEN = 0,0,{100},{100} - BOTTOMY;
+	SIZE = WIN_W,WIN_H;
+	CLOSE_SCALE = 80,80,0,0;
+};
+// 背景フレームとボタン
+$x = 0; $y = 0;
+$w = WIN_W; $h = WIN_H;
+FRAME(Profile) {
+	ID = 000_000_00010;
+	DEF_FRAME;
+	POSITION = $x,$y;
+	SIZE = $w,$h;
+	PRIORITY = -1;
+};
+BUTTON(Close) {
+	ID = 000_000_00030;
+	POSITION = WIN_W - 70,-10;
+	DEF_BUTTON_CLOSE;
+};
+TEXT(Title) {
+	ID = 000_000_00040;
+	POSITION = 10,15;
+	CAPTION = 010_025_00080;
+	FONT_KIND = NORMAL_FONT;
+	WHITE_CAPTION_COLOR;
+};
+// タブ
+$rx = 20; $ry += 70;
+$RW = 170;
+RADIO(Party) {
+	ID = 000_000_00100;
+	POSITION = $rx,$ry;
+	DEF_RADIO_DENT_NARROW;
+	CAPTION = 000_000_00015;
+	GROUP = RADIO(Party),RADIO(Friend),RADIO(Guild);
+	CONTENTS = {
+		// パーティリスト
+		$w = 500; $h = 110;
+		$x = 10; $y = 140;
+		LISTBOX(Party) {
+			ID = 000_000_00200;
+			POSITION = $x,$y;
+			SIZE = $w, WIN_H - 160;
+			CONTENTS_SIZE = $w,$h;
+			CONTENTS = {
+				$x = 5; $y = 5;
+				ICON(Party) {
+					ID = 000_000_00210;
+					AVATAR_ICON_DEF;
+					POSITION = $x,$y;
+				};
+				$X = $x + 105;
+				$x = $X;
+				TEXTURE(PartyConnect) {
+					ID = 000_000_00220;
+					DEF_ICON_CONNECT;
+					POSITION = $x, $y + 5;
+				};
+				$x += 40; $y += 5;
+				TEXT(PartyName) {
+					ID = 000_000_00230;
+					DEF_TEXT_TITLE;
+					CAPTION = 000_000_00010;
+					POSITION = $x,$y;
+				};
+				$x = $X; $y += 27;
+				TEXT(PartyLevel) {
+					ID = 000_000_00250;
+					DEF_TEXT_LEVEL;
+					CAPTION = 000_000_0010;
+					POSITION = $x,$y + 5;
+				};
+				$x += 230;
+				BUTTON(Party) {
+					ID = 000_000_00260;
+					DEF_BUTTON_LARGE;
+					CAPTION = 010_020_00040;
+					POSITION = $x,$y - 15;
+					SIZE = 160;
+				};	
+			}
+			GROUP = SCROLLBAR(Party);
+		};
+		SCROLLBAR(Party) {
+			ID = 000_000_00205;
+			STYLE = ANCHOR_RIGHTTOP;
+			DEF_SCROLLBAR_DARK;
+			POSITION = 0,32;
+			SIZE = 0,-32 * 2;
+		};
+	}
+};
+$rx += $RW;
+RADIO(Friend) {
+	ID = 000_000_00110;
+	POSITION = $rx,$ry;
+	DEF_RADIO_DENT_NARROW;
+	CAPTION = 010_000_00020;
+	GROUP = RADIO(Party),RADIO(Friend),RADIO(Guild);
+	CONTENTS = {
+		// フレンドリスト
+		$w = 500; $h = 110;
+		$x = 10; $y = 140;
+		LISTBOX(Friend) {
+			ID = 000_000_00300;
+			POSITION = $x,$y;
+			SIZE = $w, WIN_H - 160;
+			CONTENTS_SIZE = $w,$h;
+			CONTENTS = {
+				$x = 5; $y = 5;
+				ICON(Friend) {
+					ID = 000_000_00310;
+					AVATAR_ICON_DEF;
+					POSITION = $x,$y;
+				};
+				$X = $x + 105;
+				$x = $X;
+				TEXTURE(FriendConnect) {
+					ID = 000_000_00320;
+					DEF_ICON_CONNECT;
+					POSITION = $x, $y + 5;
+				};
+				$x += 40; $y += 5;
+				TEXT(FriendName) {
+					ID = 000_000_00330;
+					DEF_TEXT_TITLE;
+					CAPTION = 000_000_00010;
+					POSITION = $x,$y;
+				};
+				$x = $X; $y += 27;
+				TEXT(FriendLevel) {
+					ID = 000_000_00350;
+					DEF_TEXT_LEVEL;
+					CAPTION = 000_000_0010;
+					POSITION = $x,$y+5;
+				};
+				$x += 230;
+				BUTTON(Friend) {
+					ID = 000_000_00360;
+					DEF_BUTTON_LARGE;
+					CAPTION = 010_020_00040;
+					POSITION = $x,$y - 15;
+					SIZE = 160;
+				};
+			}
+			GROUP = SCROLLBAR(Friend);
+		};
+		SCROLLBAR(Friend) {
+			ID = 000_000_00305;
+			STYLE = ANCHOR_RIGHTTOP;
+			DEF_SCROLLBAR_DARK;
+			POSITION = 0,32;
+			SIZE = 0,-32 * 2;
+		};
+	}
+};
+$rx += $RW;
+RADIO(Guild) {
+	ID = 000_000_00120;
+	POSITION = $rx,$ry;
+	DEF_RADIO_DENT_NARROW;
+	CAPTION = 010_000_00010;
+	GROUP = RADIO(Party),RADIO(Friend),RADIO(Guild);
+	CONTENTS = {
+		// ギルドリスト
+		$w = 500; $h = 110;
+		$x = 10; $y = 140;
+		LISTBOX(Guild) {
+			ID = 000_000_00400;
+			POSITION = $x,$y;
+			SIZE = $w, WIN_H - 160;
+			CONTENTS_SIZE = $w,$h;
+			CONTENTS = {
+				$x = 5; $y = 5;
+				ICON(Guild) {
+					ID = 000_000_00410;
+					AVATAR_ICON_DEF;
+					POSITION = $x,$y;
+				};
+				$X = $x + 105;
+				$x = $X;
+				TEXTURE(GuildConnect) {
+					ID = 000_000_00420;
+					DEF_ICON_CONNECT;
+					POSITION = $x, $y + 5;
+				};
+				$x += 40; $y += 5;
+				TEXT(GuildName) {
+					ID = 000_000_00430;
+					DEF_TEXT_TITLE;
+					CAPTION = 000_000_00010;
+					POSITION = $x,$y;
+				};
+				$x = $X; $y += 27;
+				TEXT(GuildLevel) {
+					ID = 000_000_00450;
+					DEF_TEXT_LEVEL;
+					CAPTION = 000_000_0010;
+					POSITION = $x,$y+5;
+				};
+				$x += 230;
+				BUTTON(Guild) {
+					ID = 000_000_00460;
+					DEF_BUTTON_LARGE;
+					CAPTION = 010_020_00040;
+					POSITION = $x,$y - 15;
+					SIZE = 160;
+				};
+			}
+			GROUP = SCROLLBAR(Guild);
+		};
+		SCROLLBAR(Guild) {
+			ID = 000_000_00405;
+			STYLE = ANCHOR_RIGHTTOP;
+			DEF_SCROLLBAR_DARK;
+			POSITION = 0, 32;
+			SIZE = 0,-32 * 2;
+		};
+	}
+};
+
+
+
+
+

@@ -1,0 +1,57 @@
+//==============================================================================================
+/*!
+	@file  CWinAssetbundleLoading
+	@brief	全アセット読み込みプログレスバー
+*/
+//==============================================================================================
+#include "default_style.h"
+
+#define	WIN_WIDTH	640
+
+$y = -160;
+WINDOW(001_000_00000) {
+	RESOURCE = RESOURCE_PATH;
+	PATH = NETWORKPATH;
+	TEX_ID = 100_000_00000;
+	CAPTION = 000_000_0000;	//ウィンドウ
+	STYLE = WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_NOFRAME|WINDOW_STYLE_ANCHOR_CENTER|WINDOW_STYLE_TOP;
+	SIZE = {100},{100};
+	PRIORITY = PROGRESSBAR_PRIORITY;
+};
+METER(ProgressTotal) {
+	ID = 000_001_00000;
+	STYLE = ANCHOR_BOTTOM;
+	POSITION = 0,$y;
+	SIZE = {100} - 128;
+	TEX_ID = 0,"MTRB";
+	COLOR = COLOR32(255.0,255.0,255.0,255.0);
+	SIZE1 = {100} - 128;
+	TEX_ID1 = 0,"MTR";
+	COLOR1 = COLOR32(255.0,255.0,255.0,255.0);
+};
+$y += 64;
+METER(ProgressPart) {
+	ID = 000_001_00010;
+	STYLE = ANCHOR_BOTTOM;
+	SIZE = {100} - 128,32;
+	POSITION = 0,$y;
+	TEX_ID = 0,"MTRB";
+	COLOR = COLOR32(255.0,255.0,255.0,255.0);
+	SIZE1 = {100} -128,32;
+	TEX_ID1 = 0,"MTR";
+	COLOR1 = COLOR32(255.0,255.0,255.0,255.0);
+};
+TEXTURE(Wait) {
+	ID = 000_002_00020;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	TEX_ID = 0,"LD00";
+	POSITION = -48,-32;
+};
+TEXT(Message) {
+	ID = 000_002_00030;
+	STYLE = ANCHOR_RIGHTTOP;
+	CAPTION = 000_000_00250;
+	FONT_KIND = "cfn20";
+	POSITION = -48,32;
+	COLOR = 1,1,1,1;
+};

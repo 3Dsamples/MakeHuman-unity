@@ -1,0 +1,45 @@
+//==============================================================================================
+/*!
+	@file  CWinLoading
+	@brief	ローディング用プログレスバー.
+*/
+//==============================================================================================
+#include "wr.h"
+#include "default_style.h"
+
+#define	WIN_WIDTH	640
+
+WINDOW(250_000_00030) {
+	RESOURCE = RESOURCE_PATH;
+	PATH = SYSTEM_WINDOW_PATH;
+	TEX_ID = 100_000_00000;
+	CAPTION = 000_000_0000;	//ウィンドウ
+	STYLE = NOTITLEBAR|NOFRAME|ANCHOR_CENTER|TOP;
+	SCREEN = SAFEAREA(0,0,{100},{100});
+	SIZE = {100},{100};
+	PRIORITY = PROGRESSBAR_PRIORITY;	
+};
+METER(Progress) {
+	ID = 000_001_00000;
+	STYLE = ANCHOR_CENTER;
+	SIZE = {100} - 128;
+	SIZE1 = {100} - 128;
+	POSITION = 0,128;
+	TEX_ID = 0,"MTRB";
+	COLOR = 1,1,1,1;
+	TEX_ID1 = 0,"MTR";
+	COLOR1 = 1,1,1,1;
+};
+TEXTURE(Wait) {
+	ID = 000_002_00020;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	TEX_ID = 0,"LD00";
+	POSITION = -48,-32;
+};
+TEXT(Message) {
+	ID = 000_002_00030;
+	STYLE = ANCHOR_RIGHTTOP;
+	CAPTION = "Now Loading...";
+	FONT_KIND = "cfn20";
+	POSITION = -48,32;
+};

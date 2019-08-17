@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 2276632911
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 36d73af1eb95c52d2a2a7992483baceb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 85ea3e85747a9b20f780a7a257d9c10f
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 491e3a4aba5517f4385f09459b82d0e9, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/sprite.asset
+- Assets/texture.asset
+Dependencies: []

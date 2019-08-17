@@ -1,0 +1,39 @@
+//==============================================================================================
+/*!
+	@file  250_000_00010.wra
+	@brief	CWinWait
+*/
+//==============================================================================================
+#include "wr.h"
+#include "default_style.h"
+
+WINDOW(250_000_00010) {
+	RESOURCE = RESOURCE_PATH;
+	PATH = SYSTEM_WINDOW_PATH;
+	TEX_ID = 100_000_00000;
+	CAPTION = 000_000_0000;	//ウィンドウ
+	STYLE = WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_NOFRAME|WINDOW_STYLE_ANCHOR_CENTER|WINDOW_STYLE_TOP;
+	SCREEN = SAFEAREA(0,0,{100},{100});
+	SIZE = {100},{100};
+	PRIORITY = SYSTEM_UI_PRIORITY;
+};
+RICHTEXT(MESSAGE) {
+	ID = 000_001_00010;
+	STYLE = WIN_CTRL_STYLE_ANCHOR_CENTER;
+	CAPTION = "Now Loading...";
+	FONT_KIND = "cfn20";
+	POSITION = 0,-48;
+	CONTENTS_SIZE = {100} - 64;
+};
+RICHTEXT(TIPS) {
+	ID = 000_001_00020;
+	STYLE = WIN_CTRL_STYLE_ANCHOR_BOTTOM;
+	POSITION = 0,-80;
+	CONTENTS_SIZE = {100} - 64,64;
+};
+TEXTURE(Wait) {
+	ID = 000_002_00020;
+	STYLE = WIN_CTRL_STYLE_ANCHOR_RIGHTBOTTOM;
+	TEX_ID = 0,"LD00";
+	POSITION = -48,-32;
+};

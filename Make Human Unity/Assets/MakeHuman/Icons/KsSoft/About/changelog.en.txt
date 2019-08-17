@@ -1,0 +1,6 @@
+Version 2.1
+-Multilingual support for bitmap fonts
+-Enables compilation of wra files under MS-Windows without cygwin installed.
+
+Version 2.0
+-First release

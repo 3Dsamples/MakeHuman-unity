@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 645560955
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e194ae9b4d247ea40111baa700d4f8c6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 30ff480c888a389a1617103e58537f1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 491e3a4aba5517f4385f09459b82d0e9, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/sedata.asset
+- Assets/KsSoft/Se/052_000_00000/052_000_00030.wav
+- Assets/KsSoft/Se/052_000_00000/052_000_00040.wav
+- Assets/KsSoft/Se/052_000_00000/052_000_00050.wav
+- Assets/KsSoft/Se/052_000_00000/052_000_00060.wav
+- Assets/KsSoft/Se/052_000_00000/052_000_00110.wav
+- Assets/KsSoft/Se/052_000_00000/052_000_00020.wav
+Dependencies: []

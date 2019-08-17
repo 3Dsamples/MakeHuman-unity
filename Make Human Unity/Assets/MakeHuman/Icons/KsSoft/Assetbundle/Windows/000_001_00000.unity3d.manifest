@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 930600558
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a1caf374e0bf046b373ddd073d3902f4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 85ea3e85747a9b20f780a7a257d9c10f
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 491e3a4aba5517f4385f09459b82d0e9, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/fonts.asset
+- Assets/fn22_tex.asset
+- Assets/fn16_tex.asset
+- Assets/fn40_tex.asset
+- Assets/fn30_tex.asset
+Dependencies: []

@@ -1,0 +1,42 @@
+// クリック音
+SE(052_000_00020) {
+	VOLUME = 1;
+	PRIORITY = 1;
+	GROUP = 200;
+	POLYPHONY = 1;
+};
+// 決定音
+SE(052_000_00030) {
+	VOLUME = 1;
+	PRIORITY = 1;
+	GROUP = 200;
+	POLYPHONY = 1;
+};
+// キャンセル音
+SE(052_000_00040) {
+	VOLUME = 1;
+	PRIORITY = 1;
+	GROUP = 200;
+	POLYPHONY = 1;
+};
+// ウィンドウクローズ
+SE(052_000_00050) {
+	VOLUME = 1;
+	PRIORITY = 1;
+	GROUP = 200;
+	POLYPHONY = 1;
+};
+// ウィンドウオープン
+SE(052_000_00060) {
+	VOLUME = 1;
+	PRIORITY = 1;
+	GROUP = 200;
+	POLYPHONY = 1;
+};
+// リストボックス移動
+SE(052_000_00110) {
+	VOLUME = 0.5;
+	PRIORITY = 1;
+	GROUP = 200;
+	POLYPHONY = 1;
+};

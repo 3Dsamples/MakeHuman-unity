@@ -1,0 +1,7 @@
+RESOURCE = ON;
+PART("MTRB") {	//旧MTBx
+	DIVIDE3H = 12,12;
+};
+PART("MTR") {	//旧MTRx
+	DIVIDE3H = 12,12;
+};

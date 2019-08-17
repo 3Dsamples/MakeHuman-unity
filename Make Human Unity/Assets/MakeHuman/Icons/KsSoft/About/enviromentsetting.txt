@@ -1,0 +1,75 @@
+----------------------------------------------
+Environment Setting.
+----------------------------------------------
+■For MS-Windows:Install the cygwin.
+A window data need to compile the script. This compiler invokes a gcc’s preprocessor.
+Install the cygwin procedure in the MS-Windows environment as follows.
+
+(a)Download the cygwin.
+  https://cygwin.com/
+  
+(b)Installation by choosing the “Devel” package
+  In the “Select Packages”, the Devel Default → Install.
+  
+(c)Add the PATH of system enviroment variable.
+   Set the path to “bin” of the installed folder.
+   It has become in the following folder by the default.
+      C:\cygwin\bin (if 64bit version, c:\cygwin64\bin)
+   [Note!]
+   This enviroment variable is not cygwin!, it is the windows system enviroment variable.
+   Please refer to the "For MS-Windows:Install the cygwin" of WindowSystem.pdf for detailed instructions.
+
+(d)Confirmation
+   Open a windows command prompt(not the cygwin's bash!), try typing “gcc --version”. If you have been installed,it is displayed as follows.
+     windows comand prompt >gcc --version
+     gcc (GCC) 4.9.3
+     Copyright (C) 2015 Free Software Foundation, Inc.
+     This is free software; see the source for copying conditions.  There is NO
+     warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+   When you can not get the same result, you try to check two things.
+     1)You confirm to exist gcc.exe in the C:\cygwin\bin directory.
+       if you can not find gcc.exe, please rechecked the (b).
+     2)If you find gcc.exe at the C:\cygwin\bin directory, please rechecked the (c).
+     
+
+■For OSX:Install the Command Line Tools in Xcode.
+If you can not find the gcc on the terminal, please install the Command Line Tools in Xcode.
+
+------------------------------------------------------------------------------------
+Decide whether you use only a resources or use assetbundles and the resources
+------------------------------------------------------------------------------------
+■Only resources
+Please set it as follows if you load data only using a resource without using the assetbundles.
+
+  Assets/KsSoft/Plugins/KsSoftConfig.cs, line = 27
+ 	public static bool UseAssetBundle {
+		get {
+			return false;	//if you use resources without using assetbunle,you need to return false.
+		}
+	}
+
+When it is configured to use the resources, the window system exports the resource data rather than assetbundles.
+
+■Assetbundles and Resources
+If your application has to download data via HTTP using asset bundle, please set it as follows.
+
+  Assets/KsSoft/Plugins/KsSoftConfig.cs, line = 27
+ 	public static bool UseAssetBundle {
+		get {
+			return true;	//if you use resources without using assetbunle,you need to return false.
+		}
+	}
+
+ 
+
+----------------------------------------------
+This window system’s samples
+   A preparation for run the samples
+----------------------------------------------
+■Run the sample scenes
+ a)The sample which you can confirm each control behaviour.
+   Run "KsSoft/Scene/Test/Test.unity"
+ b)The sample which assumed that you used this in your application.
+   Run “KsSoft/Scene/Initialize.unity”.
+

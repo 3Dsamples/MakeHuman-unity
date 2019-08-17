@@ -1,0 +1,62 @@
+using KS;
+public class CWinProfileBase : CWindowBase {
+	public	const uint	windowId	=	168427540;	// 010_010_00020
+	static public CWinProfile create(CWindowBase cParent = null) {
+		return CWindowMgr.Instance.create<CWinProfile>(windowId,cParent);
+	}
+	public	const uint	FRAME_Profile	=	10;	// 000_000_00010
+	public	const uint	TEXTURE_TitleBG	=	11;	// 000_000_00011
+	public	const uint	TEXT_Name	=	12;	// 000_000_00012
+	public	const uint	TEXTURE_DecoLeft	=	400;	// 000_000_00400
+	public	const uint	TEXTURE_DecoRight	=	410;	// 000_000_00410
+	public	const uint	TEXTURE_DecoBottom	=	420;	// 000_000_00420
+	public	const uint	TEXTURE_Connect	=	20;	// 000_000_00020
+	public	const uint	TEXT_Place	=	30;	// 000_000_00030
+	public	const uint	RENDER_AVATAR	=	200;	// 000_000_00200
+	public	const uint	TEXT_Level	=	40;	// 000_000_00040
+	public	const uint	METER_Exp	=	45;	// 000_000_00045
+	public	const uint	TEXT_Exp	=	46;	// 000_000_00046
+	public	const uint	FRAME_More	=	300;	// 000_000_00300
+	public	const uint	TEXT_EquipSet	=	310;	// 000_000_00310
+	public	const uint	TEXT_StatusLabelHP	=	320;	// 000_000_00320
+	public	const uint	TEXT_StatusHP	=	325;	// 000_000_00325
+	public	const uint	TEXT_StatusLabelMP	=	330;	// 000_000_00330
+	public	const uint	TEXT_StatusMP	=	335;	// 000_000_00335
+	public	const uint	TEXT_StatusLabelAtk	=	340;	// 000_000_00340
+	public	const uint	TEXTURE_StatusAtk	=	341;	// 000_000_00341
+	public	const uint	TEXT_StatusAtk	=	345;	// 000_000_00345
+	public	const uint	TEXT_StatusLabelCritical	=	350;	// 000_000_00350
+	public	const uint	TEXT_StatusCritical	=	355;	// 000_000_00355
+	public	const uint	TEXT_StatusLabelDef	=	370;	// 000_000_00370
+	public	const uint	TEXTURE_StatusDef	=	371;	// 000_000_00371
+	public	const uint	TEXT_StatusDef	=	375;	// 000_000_00375
+	public	const uint	TEXTURE_Deck	=	500;	// 000_000_00500
+	public	const uint	TEXTURE_DeckLeader	=	510;	// 000_000_00510
+	public	const uint	TEXT_DeckLeader	=	520;	// 000_000_00520
+	public	const uint	TEXT_DeckInfo	=	530;	// 000_000_00530
+	public	const uint	TEXT_Deck	=	540;	// 000_000_00540
+	public	const uint	TEXTURE_EquipListLeft	=	83887090;	// 005_000_01010
+	public	const uint	TEXTURE_EquipListRight	=	83887095;	// 005_000_01015
+	public	const uint	LISTBOX_EquipList	=	83887160;	// 005_000_01080
+	public	const uint	EDITBOX_IntroductionContents	=	2000;	// 000_000_02000
+	public	const uint	TEXT_IntroductionNote	=	2010;	// 000_000_02010
+	public	const uint	SCROLLBAR_Introduction	=	2020;	// 000_000_02020
+	public	const uint	BUTTON_Guild	=	50;	// 000_000_00050
+	public	const uint	TEXTURE_Guild	=	60;	// 000_000_00060
+	public	const uint	BUTTON_Close	=	1020;	// 000_000_01020
+	public	const uint	FRAME_EquipFrame0	=	83888080;	// 005_000_02000
+	public	const uint	TEXTURE_EquipChar0	=	83888085;	// 005_000_02005
+	public	const uint	ICON_EquipChar0	=	83888090;	// 005_000_02010
+	public	const uint	TEXTURE_EquipWeapon0	=	83888095;	// 005_000_02015
+	public	const uint	ICON_EquipWeapon0	=	83888100;	// 005_000_02020
+	public	const uint	FRAME_EquipFrame1	=	83888180;	// 005_000_02100
+	public	const uint	TEXTURE_EquipChar1	=	83888185;	// 005_000_02105
+	public	const uint	ICON_EquipChar1	=	83888190;	// 005_000_02110
+	public	const uint	TEXTURE_EquipWeapon1	=	83888195;	// 005_000_02115
+	public	const uint	ICON_EquipWeapon1	=	83888200;	// 005_000_02120
+	public	const uint	FRAME_EquipFrame2	=	83888280;	// 005_000_02200
+	public	const uint	TEXTURE_EquipChar2	=	83888285;	// 005_000_02205
+	public	const uint	ICON_EquipChar2	=	83888290;	// 005_000_02210
+	public	const uint	TEXTURE_EquipWeapon2	=	83888295;	// 005_000_02215
+	public	const uint	ICON_EquipWeapon2	=	83888300;	// 005_000_02220
+};

@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 4189160333
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a2ffbc50ae7db37274d14f7327aa3c70
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/KsSoft/Bgm/051_010_00000.wav
+- Assets/KsSoft/Bgm/051_010_00000.intro.wav
+Dependencies: []

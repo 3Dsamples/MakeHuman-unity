@@ -1,0 +1,158 @@
+//==============================================================================================
+/*! CWinChatInputウィンドウ
+	@file  010_000_00009.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+
+#define WIN_H 100
+
+WINDOW(010_000_00009) {
+	PATH = CHATPATH;
+	TEX_ID = DEFAULT_TEXTURE;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_LEFTBOTTOM|WINDOW_STYLE_TOP|WINDOW_STYLE_NOECLIPSE;
+	POSITION = 0,0;
+	CLOSE_POSITION = 0,0;
+	SIZE = {100},{100};
+};
+
+$x = 8; $y = -60;
+$w = 120;
+// Chat target
+RADIO(Private) {
+	ID = 000_100_00010;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	TEX_ID=0,"BTNT?";
+	CAPTION = 010_020_00030;
+	CAPTION_COLOR = COLOR32(255,255,255,255);
+	FONT_KIND = SMALL_FONT;
+	POSITION = $x,$y;
+	SIZE = $w,52;
+	GROUP = RADIO(Private),RADIO(Party),RADIO(Guild),RADIO(Quest);
+};
+TEXTURE(Private) {
+	ID = 000_100_00020;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = $x+10,$y - 18;
+	TEX_ID = 0,"ICNI";
+	SIZE = 20,20;
+	PRIORITY = 1;
+};
+$x += $w + 5;
+RADIO(Party) {
+	ID = 000_100_00030;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	TEX_ID=0,"BTNT?";
+	CAPTION = 000_000_00015;
+	CAPTION_OFFSET = 5;
+	CAPTION_COLOR = COLOR32(255,255,255,255);
+	FONT_KIND = SMALL_FONT;
+	POSITION = $x,$y;
+	SIZE = $w,52;
+	GROUP = RADIO(Private),RADIO(Party),RADIO(Guild),RADIO(Quest);
+};
+TEXTURE(Party) {
+	ID = 000_100_00040;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = $x+10,$y - 18;
+	TEX_ID = 0,"ICNP";
+	SIZE = 20,20;
+	PRIORITY = 1;
+};
+$x += $w + 5;
+RADIO(Guild) {
+	ID = 000_100_00050;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	TEX_ID=0,"BTNT?";
+	CAPTION = 010_000_00010;
+	CAPTION_COLOR = COLOR32(255,255,255,255);
+	FONT_KIND = SMALL_FONT;
+	POSITION = $x,$y;
+	SIZE = $w,52;
+	GROUP = RADIO(Private),RADIO(Party),RADIO(Guild),RADIO(Quest);
+};
+TEXTURE(Guild) {
+	ID = 000_100_00060;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = $x+10,$y - 18;
+	TEX_ID = 0,"ICNG";
+	SIZE = 20,20;
+	PRIORITY = 1;
+};
+$x += $w + 5;
+RADIO(Quest) {
+	ID = 000_100_00070;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	TEX_ID=0,"BTNT?";
+	CAPTION = 010_020_00130;
+	CAPTION_COLOR = COLOR32(255,255,255,255);
+	CAPTION_OFFSET = 4,0;
+	FONT_KIND = SMALL_FONT;
+	POSITION = $x,$y;
+	SIZE = $w,52;
+	GROUP = RADIO(Private),RADIO(Party),RADIO(Guild),RADIO(Quest);
+};
+TEXTURE(Quest) {
+	ID = 000_100_00080;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = $x+12,$y - 18;
+	TEX_ID = 0,"ICNZ";
+	SIZE = 20,20;
+	PRIORITY = 1;
+};
+
+// Chat input
+$x = 8; $y = 0;
+$w = 100; $h = 50;
+BUTTON(Phrase) {
+	ID = 000_100_00200;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	DEF_BUTTON_CHAT;
+	POSITION = $x, -8;
+	SIZE = $w, $h;
+};
+TEXT(Phrase) {
+	ID = 000_100_00210;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	FONT_KIND = SMALL_FONT;
+	DEFAULT_CAPTION_COLOR;
+	POSITION = $x+7,-24;
+	CAPTION = 000_000_00300;
+};
+TEXTURE(Arrow) {
+	ID = 000_100_00220;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	POSITION = $x+70, -25;
+	TEX_ID = 0,"BNAU1";
+	SIZE = 18,18;
+	PRIORITY = 1;
+};
+$x += $w;
+$w = 140;
+FRAME(Target) {
+	ID = 000_100_00230;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	TEX_ID = 0,"FRMS";
+	POSITION = $x,-8;
+	SIZE=$w,$h;
+};
+TEXT(Target) {
+	ID = 000_100_00240;
+	STYLE = ANCHOR_LEFTBOTTOM|BASE_BOTTOM;
+	POSITION = $x+70,-24;
+	CAPTION = NOWLOADING;
+	FONT_KIND = SMALL_FONT;
+	DEFAULT_CAPTION_COLOR;
+};
+$x += $w;
+$w = 255;
+EDITBOX(Chat) {
+	ID = 000_100_00250;
+	DEF_INPUTBOX_CHAT;
+	STYLE = ANCHOR_LEFTBOTTOM;
+	SIZE = $w,$h;
+	EDIT = 85,0;
+	POSITION = $x,-8;
+};
+
+

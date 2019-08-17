@@ -1,0 +1,130 @@
+//==============================================================================================
+/*!タイトル:フレンドリスト
+	@file  010_020_00001.wra
+
+	@author sein
+*/
+//==============================================================================================
+#include "profile.h"
+#include "default_style.h"
+
+WINDOW(010_020_00001) {
+	PATH = FRIENDPATH;
+	TEX_ID = 100_000_00001;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_CENTER;
+	POSITION = 0,0;
+	//CLOSE_POSITION = 320,0;
+	SCREEN = 0,BASEY + 70,{100},{100} -BOTTOMY - 210;
+	SIZE = {100},{100};
+};
+
+$W = 170;
+
+$x = -16; $y = 24;
+$w = 44*3;
+BUTTON(Sort) {
+	ID = 010_020_00010;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	CAPTION = 000_000_00100;
+	DEF_BUTTON_SORT;
+	POSITION = $x,0;
+	SIZE = $w, 54;
+};
+TEXT(Sort) {
+	ID = 010_020_00011;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	WHITE_CAPTION_COLOR;
+	POSITION = $x - 24,-24;
+	CAPTION = 010_030_00060;
+	FONT_KIND = SMALL_FONT;
+};
+$x -= $w + 16;
+CHECKBOX(Edit) {
+	ID = 010_020_00015;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	DEF_BUTTON_EDIT;
+	POSITION = $x,5;
+};
+
+/*
+	フレンドリスト
+*/
+TEXT(FriendNotFound) {
+	ID = 001_020_05010;
+	STYLE = ANCHOR_CENTER;
+	DEF_TEXT_NOT_FOUND;
+	POSITION = 0,0;
+	CAPTION = 010_010_00080;
+};
+RICHTEXT(FriendNum) {
+	ID = 001_020_00100;
+	DEF_TEXT_ACCOUNT_NAME;
+	POSITION = 100,$y + 44;
+	CAPTION = NOWLOADING;
+	CONTENTS_SIZE = 300;
+};
+$x = 0; $y += 60; $w = 640; $h = 100;
+LISTBOX(FriendList) {
+	ID = 001_020_00200;
+	POSITION = $x,$y;
+	STYLE = ANCHOR_TOP;
+	SIZE = $w,{100} - $y - 60;
+	CONTENTS_SIZE = $w,$h + 4;
+	CONTENTS = {
+		$x = 16; $y = 5;
+		$h = 100;
+		FRAME(FriendFrame) {
+			ID = 001_020_00210;
+			STYLE = ANCHOR_LEFTTOP;
+			DEF_FRAME_LIGHT;
+			POSITION = $x,$y;
+			SIZE = $w-32, $h;
+		};
+		$x = 16; $y = 3;
+		Profile(Friend,001_020_00220,$x,$y);
+
+		$x += 160 + 110 + 80; $y = 15;
+		$w = 80; $h = 80;
+		BUTTON(FriendParty) {
+			ID = 001_020_00290;
+			DEF_BUTTON_PARTY;
+			STYLE = ANCHOR_LEFTTOP;
+			POSITION = $x,$y;
+			SIZE = $w, $h;
+		};
+		$x += $w + 4;
+		BUTTON(FriendChat) {
+			ID = 001_020_00300;
+			DEF_BUTTON_PRIVATE_CHAT;
+			STYLE = ANCHOR_LEFTTOP;
+			POSITION = $x,$y;
+			SIZE = $w, $h;
+		};
+		$x += $w + 4;
+		BUTTON(FriendReply) {
+			ID = 001_020_00280;
+			DEF_BUTTON_MAIL;
+			STYLE = ANCHOR_LEFTTOP;
+			POSITION = $x,$y;
+			SIZE = $w, $h;
+		};
+		$x += $w -100;
+		$w = 100;
+		BUTTON(FriendTrash) {
+			ID = 001_020_00310;
+			DEF_BUTTON_TRASH;
+			STYLE = ANCHOR_LEFTTOP;
+			POSITION = $x,$y;
+			SIZE = $w, $h;
+			PRIORITY = 1;
+		};
+	}
+	GROUP = SCROLLBAR(FriendList);
+};
+SCROLLBAR(FriendList) {
+	ID = 001_020_00205;
+	DEF_SCROLLBAR;
+	STYLE = ANCHOR_RIGHTTOP;
+	POSITION = 0,16;
+	SIZE = , -16 * 2;
+};

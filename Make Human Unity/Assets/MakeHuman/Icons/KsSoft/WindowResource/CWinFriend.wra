@@ -1,0 +1,55 @@
+//==============================================================================================
+/*!タイトル:フレンドラジオボタン（デント）
+	@file  010_020_00000.wra
+
+	@author sein
+*/
+//==============================================================================================
+#include "profile.h"
+#include "default_style.h"
+#include "titlebar.h"
+#include "back.h"
+
+WINDOW(010_020_00000) {
+	PATH = FRIENDPATH;
+	TEX_ID = 100_000_00001;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_TOP;
+	POSITION = 0,0;
+	CLOSE_POSITION = 320,0;
+	SCREEN = 0,BASEY,{100},{100};
+	SIZE = {100},{100};
+};
+
+TITLEBAR(Title,000_000_00010,104 - BASEY,010_000_00020);
+
+/* 
+	ラジオボタン（デント）
+*/
+$y = 80;
+RADIO(RadioFriendList) {
+	ID = 010_020_00200;
+	CAPTION = 000_000_00420;
+	STYLE = ANCHOR_TOP;
+	DEF_RADIO_DENT_NARROW;
+	POSITION = -180,$y;
+	GROUP = RADIO(RadioFriendList),RADIO(RadioApplying),RADIO(RadioBlacklist);
+};
+RADIO(RadioApplying) {
+	ID = 010_020_00300;
+	CAPTION = 010_010_00030;
+	STYLE = ANCHOR_TOP;
+	DEF_RADIO_DENT_NARROW;
+	POSITION = 0,$y;
+	GROUP = RADIO(RadioFriendList),RADIO(RadioApplying),RADIO(RadioBlacklist);
+};
+RADIO(RadioBlacklist) {
+	ID = 010_020_00400;
+	CAPTION = 010_010_00400;
+	STYLE = ANCHOR_TOP;
+	DEF_RADIO_DENT_NARROW;
+	POSITION = 180,$y;
+	GROUP = RADIO(RadioFriendList),RADIO(RadioApplying),RADIO(RadioBlacklist);
+};
+
+BACKBUTTON(Back,000_000_003000);
+

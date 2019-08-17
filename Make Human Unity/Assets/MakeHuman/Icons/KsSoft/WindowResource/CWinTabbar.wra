@@ -1,0 +1,68 @@
+//==============================================================================================
+/*! Tabbarウィンドウ
+	@file  010_000_00000.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+
+#define	DX 104
+
+WINDOW(010_000_00000) {
+	PATH = TOWNPATH;
+	TEX_ID = DEFAULT_TEXTURE;
+	STYLE = WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_ANCHOR_LEFTBOTTOM;
+	POSITION = 0,-4;
+	SIZE = {100},100;
+};
+
+$yoffset = 15;
+
+$x = 12; $y = 0;
+RADIO(Home) {
+	ID = 010_000_00010;
+	CAPTION = 010_000_000060;
+	DEF_TABBAR;
+	TEX_ID = 0,"MBHM?";
+	POSITION = $x,$y;
+	GROUP = RADIO(Home),RADIO(Quest),RADIO(Item),RADIO(Gatcha),RADIO(Shop);
+};
+
+$x += DX;
+RADIO(Quest) {
+	ID = 010_000_00020;
+	CAPTION = 010_000_000000;
+	DEF_TABBAR;
+	TEX_ID = 0,"MBQT?";
+	POSITION = $x,$y;
+	GROUP = RADIO(Home),RADIO(Quest),RADIO(Item),RADIO(Gatcha),RADIO(Shop);
+};
+
+$x += DX;
+RADIO(Item) {
+	ID = 010_000_00040;
+	CAPTION = 010_000_00030;
+	DEF_TABBAR;
+	TEX_ID = 0,"MBIT?";
+	POSITION = $x,$y;
+	GROUP = RADIO(Home),RADIO(Quest),RADIO(Item),RADIO(Gatcha),RADIO(Shop);
+};
+
+$x += DX;
+RADIO(Gatcha) {
+	ID = 010_000_00050;
+	CAPTION = 010_000_00040;
+	DEF_TABBAR;
+	TEX_ID = 0,"MBGC?";
+	POSITION = $x,$y;
+	GROUP = RADIO(Home),RADIO(Quest),RADIO(Item),RADIO(Gatcha),RADIO(Shop);
+};
+
+$x += DX;
+RADIO(Shop) {
+	ID = 010_000_00060;
+	CAPTION = 010_000_00050;
+	DEF_TABBAR;
+	TEX_ID = 0,"MBSP?";
+	POSITION = $x,$y;
+	GROUP = RADIO(Home),RADIO(Quest),RADIO(Item),RADIO(Gatcha),RADIO(Shop);
+};

@@ -1,0 +1,70 @@
+//==============================================================================================
+/*!ストーリー拠点ウィンドウ
+	@file  010_010_00080.wra
+*/
+//==============================================================================================
+#include "default_style.h"
+#include "camp.h"
+#include "titlebar.h"
+#include "back.h"
+
+#define	WIN_W	800
+#define	WIN_H	450
+
+WINDOW(010_010_00080) {
+	PATH = QUESTPATH;
+	STYLE = WINDOW_STYLE_ANCHOR_LEFTTOP|WINDOW_STYLE_NOFRAME|WINDOW_STYLE_NOTITLEBAR|WINDOW_STYLE_NOBRINGTOTOP|WINDOW_STYLE_OPENBOTTOM;
+	TEX_ID = 100_010_00000;
+	POSITION = 0,0;
+	//CLOSE_POSITION = 320,0;
+	SIZE = {100},{100};
+};
+
+TITLEBAR(Title,000_000_01000,104,010_090_00000);
+
+CONTAINER(Map) {
+	ID = 000_000_000100;
+	POSITION = 0,0;
+	SIZE = {100},{100};
+	CONTENTS_SIZE = 1024,1024;
+	COLOR = COLOR32(255,255,255,255);
+	CONTENTS = {
+		CAMP_ALONE(Camp0,009_000_0000,50,200,"CMPD?");
+		CAMP(Camp1,009_000_00010,170,450,50,200,"CMPD?");
+		CAMP(Camp2,009_000_10010,350,300,170,450,"CMPD?");
+	}
+};
+
+
+BUTTON(Prev) {
+	ID = 000_000_002000;
+	STYLE = ANCHOR_LEFT;
+	TEX_ID = 100_000_00001,"ARWL?";
+	POSITION = 4,-52;
+};
+BUTTON(Next) {
+	ID = 000_000_002010;
+	STYLE = ANCHOR_RIGHT;
+	TEX_ID = 100_000_00001,"ARWR?";
+	POSITION = -4,-52;
+};
+
+TEXTURE(Page) {
+	ID = 000_000_003020;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	TEX_ID = 100_000_00001,"PAGEB";
+	POSITION = 0,-200;
+	SIZE = 112;
+	PRIORITY = 1;
+};
+TEXT(Page) {
+	ID = 000_000_003030;
+	STYLE = ANCHOR_RIGHTBOTTOM;
+	POSITION =  -11,-208;
+	FONT_KIND = NORMAL_FONT;
+	CAPTION = 010_090_00320;
+	WHITE_CAPTION_COLOR;
+	PRIORITY = 1;
+};
+
+BACKBUTTON(Back,000_000_003000);
